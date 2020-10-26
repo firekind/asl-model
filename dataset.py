@@ -23,7 +23,7 @@ class ASLSignLanguage(ImageFolder, BaseDataset):
         use_default_transforms: bool = False,
     ):
         ImageFolder.__init__(
-            self, f"{root}/asl_alphabet_train", transform, target_transform, loader
+            self, f"{root}/train", transform, target_transform, loader
         )
         BaseDataset.__init__(
             self, root, True, transform, target_transform, False, use_default_transforms
