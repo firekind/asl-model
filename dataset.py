@@ -58,6 +58,7 @@ class ASLSignLanguage(ImageFolder, BaseDataset):
                     std=ASLSignLanguage.std,
                     max_pixel_value=1.0,
                 ),
+                A.Resize(64, 64),
                 A.Rotate((-10, 10)),
                 A.OneOf([A.RGBShift(), A.ToGray()]),
                 A.Lambda(ToTensor, name="ToTensor"),
@@ -73,6 +74,7 @@ class ASLSignLanguage(ImageFolder, BaseDataset):
                     std=ASLSignLanguage.std,
                     max_pixel_value=1.0,
                 ),
+                A.Resize(64, 64),
                 A.Lambda(ToTensor, name="ToTensor"),
             ]
         )
