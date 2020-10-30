@@ -60,7 +60,7 @@ class ASLSignLanguage(ImageFolder, BaseDataset):
                 ),
                 A.Resize(64, 64),
                 A.Rotate((-10, 10)),
-                A.OneOf([A.RGBShift(), A.ToGray()]),
+                # A.OneOf([A.RGBShift(), A.ToGray()]),
                 A.Lambda(ToTensor, name="ToTensor"),
             ]
         )
